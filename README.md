@@ -9,7 +9,7 @@
 
 ## DEMO:
 
-![IMAGE_DEMO_GIF](https://github.com/huubao2309/change_theme_getx/blob/main/images/change_theme.gif)
+![IMAGE_DEMO_GIF](https://github.com/huubao2309/change_theme_getx/blob/main/images/demo.gif)
 
 ## FIX REBUILD COLOR:
 
