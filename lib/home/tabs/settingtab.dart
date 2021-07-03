@@ -5,6 +5,7 @@ import 'package:question_theme_mode/home/controllers/home_controller.dart';
 class SettingTab extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
+    print('Setting Tab rebuild');
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -21,7 +22,7 @@ class SettingTab extends GetView<HomeController> {
           children: [
             _buildTextSetting(),
             const SizedBox(height: 80),
-            _buildChangeThemButton(),
+            _buildChangeThemButton(context),
           ],
         ),
       ),
@@ -38,15 +39,15 @@ class SettingTab extends GetView<HomeController> {
     );
   }
 
-  Widget _buildChangeThemButton() {
+  Widget _buildChangeThemButton(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
-      color: Get.theme.primaryColor,
+      color: context.theme.primaryColor,
       child: MaterialButton(
         child: Text(
           'Change theme',
           style: TextStyle(
-            color: Get.theme.accentColor,
+            color: context.theme.accentColor,
             fontSize: 20,
           ),
         ),

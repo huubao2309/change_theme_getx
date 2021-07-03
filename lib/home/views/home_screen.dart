@@ -8,11 +8,11 @@ class HomeScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => false,
-      child: Obx(_buildWidget),
+      child: Obx(() =>_buildWidget(context)),
     );
   }
 
-  Widget _buildWidget() {
+  Widget _buildWidget(BuildContext context) {
     return Scaffold(
       body: Center(
         child: _buildContent(controller.currentTab.value),
@@ -23,13 +23,13 @@ class HomeScreen extends GetView<HomeController> {
           _buildNavigationBarItem('Setting', 'setting'),
         ],
         type: BottomNavigationBarType.fixed,
-        unselectedItemColor: Get.theme.backgroundColor,
-        selectedItemColor: Get.theme.primaryColor,
+        unselectedItemColor: context.theme.backgroundColor,
+        selectedItemColor: context.theme.primaryColor,
         currentIndex: controller.getCurrentIndex(controller.currentTab.value),
         selectedLabelStyle: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.bold,
-          color: Get.theme.accentColor,
+          color: context.theme.accentColor,
         ),
         onTap: (index) => controller.switchTab(index),
       ),
